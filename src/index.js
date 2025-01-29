@@ -188,6 +188,20 @@ app.get('/cards', (req, res, next) => {
   });
 });
 
+app.get('/users', (req, res, next) => {
+  res.json({
+     id: 1,
+     username: "emilys",
+     email: "emily.johnson@x.dummyjson.com",
+     firstName: "Emily",
+     lastName: "Johnson",
+     gender: "female",
+     image: "https://dummyjson.com/icon/emilys/128",
+     accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...", // JWT accessToken (for backward compatibility) in response and cookies
+     refreshToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." // refreshToken in response and cookies
+   });
+});
+
 const PORT = 8001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
