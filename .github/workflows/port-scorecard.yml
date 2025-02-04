@@ -1,0 +1,22 @@
+name: Scheduled Scorecards Report
+
+on:
+  schedule:
+    ## run every day at 9am
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate-scorecard-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Scorecard Report
+        uses: port-labs/port-sender@v0.2.4
+        with:
+          operation_kind: scorecard_report
+          port_client_id: ${{ secrets.PORT_CLIENT_ID }}
+          port_client_secret: ${{ secrets.PORT_CLIENT_SECRET }}
+          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          blueprint: app
+          scorecard: productionReadiness
+          target_kind: slack
