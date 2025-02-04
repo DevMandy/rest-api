@@ -3,7 +3,7 @@ name: Scheduled Scorecards Report
 on:
   schedule:
     ## run every day at 9am
-    - cron: '0 9 * * *'
+    - cron: '1 2 * * *'
   workflow_dispatch:
 
 jobs:
