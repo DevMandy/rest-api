@@ -18,6 +18,12 @@ app.post("/sum", (req, res) => {
     res.json({ sum: num1 + num2 });
 });
 
+app.get("/animals", (req, res) => {
+    const name = req.query.name || "Guest";
+    res.json({ animals: ["dog", "cat", "fish"] });
+});
+
+
 module.exports = app; // Export for testing
 
 // Start server if run directly
