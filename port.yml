@@ -1,0 +1,9 @@
+# enrichService.yml
+
+- identifier: "rest-api"
+  blueprint: service
+  properties:
+    type: "null"
+    lifecycle: "null"
+  relations:
+    domain: "payment"
