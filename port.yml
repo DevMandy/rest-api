@@ -1,0 +1,9 @@
+# enrichService.yml
+
+- identifier: "rest-api"
+  blueprint: service
+  properties:
+    type: "backend"
+    lifecycle: "Experimental"
+  relations:
+    domain: "payment"
